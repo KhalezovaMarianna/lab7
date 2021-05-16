@@ -256,7 +256,18 @@ public class Main extends JFrame {
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
-
+            if (destinationAddress.isEmpty()) {
+                JOptionPane.showMessageDialog(this,
+                        "Введите адрес узла-получателя", "Ошибка",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (message.isEmpty()) {
+                JOptionPane.showMessageDialog(this,
+                        " Введите текст сообщения", "Ошибка",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
             // Создаем сокет для соединения
             final Socket socket =  new Socket(destinationAddress, SERVER_PORT);
